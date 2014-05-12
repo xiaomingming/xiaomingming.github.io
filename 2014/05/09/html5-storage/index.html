@@ -5,7 +5,6 @@
   
   <title>HTML5 storage | xiaoming&#39;s blog</title>
   <meta name="author" content="xiaoming">
-
   
   <meta name="description" content="概念：
 html5中存在localStorage对象（本地存储）和sessionStorage对象。
@@ -13,69 +12,124 @@ localStorage对象，既然是本地存储，自然是长久存在了。无论�
 sessionStorage对象，和后端语言中">
   
   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="alternate" href="/atom.xml" title="xiaoming&#39;s blog" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <meta property="og:title" content="HTML5 storage"/>
+  <meta property="og:site_name" content="xiaoming&#39;s blog"/>
+
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '[object Object]']);
-  _gaq.push(['_trackPageview']);
+    <meta property="og:image" content="undefined"/>
+  
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="xiaoming&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/social_foundicons.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-1.8.3.min.js"></script>
+  
 </head>
 
+
 <body>
-  <header id="header" class="inner"><nav>
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-      <li><a href="/categories/En">En</a></li>
-    
-      <li><a href="/about">About</a></li>
-    
-      <li><a href="/cn">关于</a></li>
-    
-  </ul>
-</nav></header>
-  <div id="content" class="inner"><article class="post">
+        <script type="text/javascript">
+        /**
+         * 回到页面顶部
+         * @param acceleration 加速度
+         * @param time 时间间隔 (毫秒)
+         **/
+        function goTop(acceleration, time) {
+            acceleration = acceleration || 0.1;
+            time = time || 16;
+
+            var x1 = 0;
+            var y1 = 0;
+            var x2 = 0;
+            var y2 = 0;
+            var x3 = 0;
+            var y3 = 0;
+
+            if (document.documentElement) {
+                x1 = document.documentElement.scrollLeft || 0;
+                y1 = document.documentElement.scrollTop || 0;
+            }
+            if (document.body) {
+                x2 = document.body.scrollLeft || 0;
+                y2 = document.body.scrollTop || 0;
+            }
+            var x3 = window.scrollX || 0;
+            var y3 = window.scrollY || 0;
+
+            // 滚动条到页面顶部的水平距离
+            var x = Math.max(x1, Math.max(x2, x3));
+            // 滚动条到页面顶部的垂直距离
+            var y = Math.max(y1, Math.max(y2, y3));
+
+            // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
+            var speed = 1 + acceleration;
+            window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+            // 如果距离不为零, 继续调用迭代本函数
+            if(x > 0 || y > 0) {
+                var invokeFunction = "goTop(" + acceleration + ", " + time + ")";
+                window.setTimeout(invokeFunction, time);
+            }
+        }
+    </script>
+    <a href="#" onclick="goTop();return false;" class="backTop">▲</a>
+        <header>
+            <div class="wrapper">
+                <div class="center">
+                    <div class="searchBox"></div>
+                    <div class="headerMenu">
+                        <ul>
+                            
+                            <li><a href="/">Home</a></li>
+                            
+                            <li><a href="/archives">Archives</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="socnets">
+                        
+                        
+                        <a href="/atom.xml" alt="rss"><i class="foundicon-rss"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main">
+                        <div class="brand">
+                <div class="wide">
+                    <div class="center">
+                        <h1>
+                            <a href="/">xiaoming&#39;s blog</a>
+                        </h1>
+                        <p>
+                            青春变成岁月的站台，回忆当礼物放口袋
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="content"><div class="wide">
+    <div class="center">
+        <div class="head">
+            <div class="timeLine">
+                <time datetime="2014-05-09T07:02:45.000Z" class="date">
+                    <a href="/2014/05/09/html5-storage/">5月 9 2014</a>
+                </time>
+            </div>
+        </div>
+        
   
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title">HTML5 storage</h1>
+    <h2 class="title">HTML5 storage</h1>
   
 
-    <time datetime="2014-05-09T07:02:45.000Z">
-  <span class="day">9</span><span class="month">5月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <h2 id="概念：">概念：</h2>
+        <div class="entry">
+        
+          <h2 id="概念：">概念：</h2>
 <p>html5中存在<code>localStorage</code>对象（本地存储）和<code>sessionStorage</code>对象。</p>
 <p><code>localStorage</code>对象，既然是本地存储，自然是长久存在了。无论页面刷新，还是窗口关闭，始终存在。与cookie对象不同的是，该对象无法设置过期。</p>
 <p><code>sessionStorage</code>对象，和后端语言中的session差不多，浏览器关闭了，其值就删除了。</p>
@@ -218,36 +272,19 @@ sessionStorage对象，和后端语言中">
 </pre></td></tr></table></figure>
 
 
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/html5/">html5</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/storage/">storage</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article></div>
-  <footer id="footer" class="inner"><div class="social alignright">
-  
-  
-  
-  
-  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+        
+        
+        </div>
+    </div>
 </div>
-<p>
+                </div>
+        </div>
+
+  <footer>
   
   &copy; 2014 xiaoming
   
-</p>
-<div class="clearfix"></div></footer>
+</footer>
   <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 
@@ -262,12 +299,5 @@ sessionStorage对象，和后端语言中">
 })(jQuery);
 </script>
 
-
-<div id="phasebeam">
-  <canvas></canvas>
-  <canvas></canvas>
-  <canvas></canvas>
-</div>
-<script src="/js/phasebeam.js"></script>
 </body>
 </html>

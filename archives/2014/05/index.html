@@ -3,88 +3,132 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014/5 | xiaoming&#39;s blog</title>
+  <title>归档：2014/5 | xiaoming&#39;s blog</title>
   <meta name="author" content="xiaoming">
-
   
   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  
+  <meta property="og:site_name" content="xiaoming&#39;s blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
   <link rel="alternate" href="/atom.xml" title="xiaoming&#39;s blog" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/social_foundicons.css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-1.8.3.min.js"></script>
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '[object Object]']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </head>
 
+
 <body>
-  <header id="header" class="inner"><nav>
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-      <li><a href="/categories/En">En</a></li>
-    
-      <li><a href="/about">About</a></li>
-    
-      <li><a href="/cn">关于</a></li>
-    
-  </ul>
-</nav></header>
-  <div id="content" class="inner">
+        <script type="text/javascript">
+        /**
+         * 回到页面顶部
+         * @param acceleration 加速度
+         * @param time 时间间隔 (毫秒)
+         **/
+        function goTop(acceleration, time) {
+            acceleration = acceleration || 0.1;
+            time = time || 16;
 
-<header id="archive-header">
-  <h1 class="alignleft">Archives: 2014/5</h1>
-  <div class="search alignright">
-    <form action="http://google.com/search" method="get" accept-charset="utf-8">
-      <input type="search" name="q" results="0" placeholder="Search">
-      <input type="hidden" name="q" value="site:xiaomingming.github.io">
-    </form>
-  </div>
-</header>
+            var x1 = 0;
+            var y1 = 0;
+            var x2 = 0;
+            var y2 = 0;
+            var x3 = 0;
+            var y3 = 0;
+
+            if (document.documentElement) {
+                x1 = document.documentElement.scrollLeft || 0;
+                y1 = document.documentElement.scrollTop || 0;
+            }
+            if (document.body) {
+                x2 = document.body.scrollLeft || 0;
+                y2 = document.body.scrollTop || 0;
+            }
+            var x3 = window.scrollX || 0;
+            var y3 = window.scrollY || 0;
+
+            // 滚动条到页面顶部的水平距离
+            var x = Math.max(x1, Math.max(x2, x3));
+            // 滚动条到页面顶部的垂直距离
+            var y = Math.max(y1, Math.max(y2, y3));
+
+            // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
+            var speed = 1 + acceleration;
+            window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+            // 如果距离不为零, 继续调用迭代本函数
+            if(x > 0 || y > 0) {
+                var invokeFunction = "goTop(" + acceleration + ", " + time + ")";
+                window.setTimeout(invokeFunction, time);
+            }
+        }
+    </script>
+    <a href="#" onclick="goTop();return false;" class="backTop">▲</a>
+        <header>
+            <div class="wrapper">
+                <div class="center">
+                    <div class="searchBox"></div>
+                    <div class="headerMenu">
+                        <ul>
+                            
+                            <li><a href="/">Home</a></li>
+                            
+                            <li><a href="/archives">Archives</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="socnets">
+                        
+                        
+                        <a href="/atom.xml" alt="rss"><i class="foundicon-rss"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main">
+                        <div class="brand">
+                <div class="wide">
+                    <div class="center">
+                        <h1>
+                            <a href="/">xiaoming&#39;s blog</a>
+                        </h1>
+                        <p>
+                            青春变成岁月的站台，回忆当礼物放口袋
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
 
 
   
-    <article class="post">
+    <div class="wide">
+    <div class="center">
+        <div class="head">
+            <div class="timeLine">
+                <time datetime="2014-05-09T07:40:22.000Z" class="date">
+                    <a href="/2014/05/09/object-enumberable-properties/">5月 9 2014</a>
+                </time>
+            </div>
+        </div>
+        
   
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2014/05/09/object-enumberable-properties/">javascript对象属性枚举</a></h1>
+    <h2 class="title"><a href="/2014/05/09/object-enumberable-properties/">javascript对象属性枚举</a></h1>
   
 
-    <time datetime="2014-05-09T07:40:22.000Z">
-  <span class="day">9</span><span class="month">5月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p>对于属性和方法的枚举，以前是用的<code>for in</code>来枚举，但是有些过时了。<br>这里介绍下枚举存在的一些概念和问题。</p>
+        <div class="entry">
+        
+          <p>对于属性和方法的枚举，以前是用的<code>for in</code>来枚举，但是有些过时了。<br>这里介绍下枚举存在的一些概念和问题。</p>
 <h2 id="一、枚举和不可枚举">一、枚举和不可枚举</h2>
 <p>既然可以枚举，那么肯定也有不能枚举的可能。</p>
 <p>javascript中，哪个对象的可枚举属性<code>[[Enumberable]]</code>为<code>true</code>为真时，就意味着它是可以枚举的。否则不可枚举（Es5有可枚举的方法）。</p>
@@ -136,51 +180,32 @@ console.log(<span class="built_in">Object</span>.getOwnPropertyNames(Person.prot
 <p>其它参考：</p>
 <p><a href="http://www.cnblogs.com/ziyunfei/archive/2012/11/03/2752905.html" target="_blank">http://www.cnblogs.com/ziyunfei/archive/2012/11/03/2752905.html</a></p>
 
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/javascript/">javascript</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/javascript/">javascript</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-  
-    <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
+        
+        
+          
+        
+        </div>
+    </div>
 </div>
+                
   
-  <header>
-    
+    <div class="wide">
+    <div class="center">
+        <div class="head">
+            <div class="timeLine">
+                <time datetime="2014-05-09T07:33:46.000Z" class="date">
+                    <a href="/2014/05/09/javascript-closure/">5月 9 2014</a>
+                </time>
+            </div>
+        </div>
+        
   
-    <h1 class="title"><a href="/2014/05/09/javascript-closure/">javascript 闭包理解</a></h1>
+    <h2 class="title"><a href="/2014/05/09/javascript-closure/">javascript 闭包理解</a></h1>
   
 
-    <time datetime="2014-05-09T07:33:46.000Z">
-  <span class="day">9</span><span class="month">5月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <h2 id="一、概念">一、概念</h2>
+        <div class="entry">
+        
+          <h2 id="一、概念">一、概念</h2>
 <p>一句话：就是包裹函数内部的函数访问包裹函数内（非内嵌函数体中）的变量，并返回该内部函数（看来此话不对啊）。<br>应当是：函数访问其外部变量，并持有该变量。</p>
 <h2 id="二、传值情形">二、传值情形</h2>
 <h3 id="1-值传递情形">1.值传递情形</h3>
@@ -473,51 +498,32 @@ db(<span class="string">'x'</span>); <span class="comment">// 返回 1</span>
 <h2 id="六、参考：">六、参考：</h2>
 <p><a href="http://stackoverflow.com/questions/111102/how-do-javascript-closures-work" target="_blank">http://stackoverflow.com/questions/111102/how-do-javascript-closures-work</a><br><a href="http://wlog.cn/javascript/javascript-closures.html" target="_blank">http://wlog.cn/javascript/javascript-closures.html</a><br><a href="http://segmentfault.com/q/1010000000418684" target="_blank">http://segmentfault.com/q/1010000000418684</a><br><a href="http://kb.cnblogs.com/page/110782/" target="_blank">http://kb.cnblogs.com/page/110782/</a></p>
 
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/javascript/">javascript</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/闭包/">闭包</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-  
-    <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
+        
+        
+          
+        
+        </div>
+    </div>
 </div>
+                
   
-  <header>
-    
+    <div class="wide">
+    <div class="center">
+        <div class="head">
+            <div class="timeLine">
+                <time datetime="2014-05-09T07:16:37.000Z" class="date">
+                    <a href="/2014/05/09/css-bfc/">5月 9 2014</a>
+                </time>
+            </div>
+        </div>
+        
   
-    <h1 class="title"><a href="/2014/05/09/css-bfc/">css BFC</a></h1>
+    <h2 class="title"><a href="/2014/05/09/css-bfc/">css BFC</a></h1>
   
 
-    <time datetime="2014-05-09T07:16:37.000Z">
-  <span class="day">9</span><span class="month">5月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <h2 id="一、BFC到底是什么？">一、BFC到底是什么？</h2>
+        <div class="entry">
+        
+          <h2 id="一、BFC到底是什么？">一、BFC到底是什么？</h2>
 <p>当涉及到可视化布局的时候，Block Formatting Context提供了一个环境，HTML元素在这个环境中按照一定规则进行布局。一个环境中的元素不会影响到其它环境中的布局。比如浮动元素会形成BFC，浮动元素内部子元素的主要受该浮动元素影响，两个浮动元素之间是互不影响的。这里有点类似一个BFC就是一个独立的行政单位的意思。</p>
 <h2 id="二、css形成BFC的条件：">二、css形成BFC的条件：</h2>
 <p>英文：</p>
@@ -534,51 +540,32 @@ db(<span class="string">'x'</span>); <span class="comment">// 返回 1</span>
 <h2 id="三、应用">三、应用</h2>
 <p>边距叠加，浮动清除等。</p>
 
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/css/">css</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/BFC/">BFC</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-  
-    <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
+        
+        
+          
+        
+        </div>
+    </div>
 </div>
+                
   
-  <header>
-    
+    <div class="wide">
+    <div class="center">
+        <div class="head">
+            <div class="timeLine">
+                <time datetime="2014-05-09T07:14:25.000Z" class="date">
+                    <a href="/2014/05/09/sass-extend-placeholder/">5月 9 2014</a>
+                </time>
+            </div>
+        </div>
+        
   
-    <h1 class="title"><a href="/2014/05/09/sass-extend-placeholder/">SASS extend,mixin,%占位符区别</a></h1>
+    <h2 class="title"><a href="/2014/05/09/sass-extend-placeholder/">SASS extend,mixin,%占位符区别</a></h1>
   
 
-    <time datetime="2014-05-09T07:14:25.000Z">
-  <span class="day">9</span><span class="month">5月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <h2 id="一、区别">一、区别</h2>
+        <div class="entry">
+        
+          <h2 id="一、区别">一、区别</h2>
 <p>1.<code>@extend</code>需要一个存在的类名，编译后，会做<code>css</code>样式合并。比如</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre>1
 2
@@ -695,51 +682,32 @@ db(<span class="string">'x'</span>); <span class="comment">// 返回 1</span>
 <p>此时编译你的SCSS文件时，编译器将会报错。</p>
 <p>参考：<a href="http://www.w3cplus.com/preprocessor/understanding-placeholder-selectors.html" target="_blank">http://www.w3cplus.com/preprocessor/understanding-placeholder-selectors.html</a></p>
 
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/sass/">sass</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/sass/">sass</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-  
-    <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
+        
+        
+          
+        
+        </div>
+    </div>
 </div>
+                
   
-  <header>
-    
+    <div class="wide">
+    <div class="center">
+        <div class="head">
+            <div class="timeLine">
+                <time datetime="2014-05-09T07:10:38.000Z" class="date">
+                    <a href="/2014/05/09/sass-learning/">5月 9 2014</a>
+                </time>
+            </div>
+        </div>
+        
   
-    <h1 class="title"><a href="/2014/05/09/sass-learning/">SASS使用学习</a></h1>
+    <h2 class="title"><a href="/2014/05/09/sass-learning/">SASS使用学习</a></h1>
   
 
-    <time datetime="2014-05-09T07:10:38.000Z">
-  <span class="day">9</span><span class="month">5月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p>1.变量声明：<code>$</code>开头，写在css属性中时需要写在<code>#{}</code>中。</p>
+        <div class="entry">
+        
+          <p>1.变量声明：<code>$</code>开头，写在css属性中时需要写在<code>#{}</code>中。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -975,51 +943,32 @@ body {
 </pre></td></tr></table></figure>
 
 
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/css/">css</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/sass/">sass</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-  
-    <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
+        
+        
+          
+        
+        </div>
+    </div>
 </div>
+                
   
-  <header>
-    
+    <div class="wide">
+    <div class="center">
+        <div class="head">
+            <div class="timeLine">
+                <time datetime="2014-05-09T07:02:45.000Z" class="date">
+                    <a href="/2014/05/09/html5-storage/">5月 9 2014</a>
+                </time>
+            </div>
+        </div>
+        
   
-    <h1 class="title"><a href="/2014/05/09/html5-storage/">HTML5 storage</a></h1>
+    <h2 class="title"><a href="/2014/05/09/html5-storage/">HTML5 storage</a></h1>
   
 
-    <time datetime="2014-05-09T07:02:45.000Z">
-  <span class="day">9</span><span class="month">5月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <h2 id="概念：">概念：</h2>
+        <div class="entry">
+        
+          <h2 id="概念：">概念：</h2>
 <p>html5中存在<code>localStorage</code>对象（本地存储）和<code>sessionStorage</code>对象。</p>
 <p><code>localStorage</code>对象，既然是本地存储，自然是长久存在了。无论页面刷新，还是窗口关闭，始终存在。与cookie对象不同的是，该对象无法设置过期。</p>
 <p><code>sessionStorage</code>对象，和后端语言中的session差不多，浏览器关闭了，其值就删除了。</p>
@@ -1162,51 +1111,32 @@ body {
 </pre></td></tr></table></figure>
 
 
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/html5/">html5</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/storage/">storage</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-  
-    <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
+        
+        
+          
+        
+        </div>
+    </div>
 </div>
+                
   
-  <header>
-    
+    <div class="wide">
+    <div class="center">
+        <div class="head">
+            <div class="timeLine">
+                <time datetime="2014-05-09T06:59:07.000Z" class="date">
+                    <a href="/2014/05/09/javascript-practice-notes/">5月 9 2014</a>
+                </time>
+            </div>
+        </div>
+        
   
-    <h1 class="title"><a href="/2014/05/09/javascript-practice-notes/">《编写可维护的javascript》读书总结</a></h1>
+    <h2 class="title"><a href="/2014/05/09/javascript-practice-notes/">《编写可维护的javascript》读书总结</a></h1>
   
 
-    <time datetime="2014-05-09T06:59:07.000Z">
-  <span class="day">9</span><span class="month">5月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p>总体来看，书分为三个部分来阐述：</p>
+        <div class="entry">
+        
+          <p>总体来看，书分为三个部分来阐述：</p>
 <p>1.编程风格<br>2.编程实践<br>3.自动化</p>
 <h2 id="一、编程风格">一、编程风格</h2>
 <p>编程风格应当是所有语言都会涉及的话题了。比如：代码书写格式，语句和表达式，注释等。<br>这几个环节要进行统一约束的话，还是需要借助工具。比如好的编辑器（<code>webstorm</code>），编译语言（<code>coffeeScript</code>）。<br>所以，这里应当还是比较容易处理的。</p>
@@ -1277,51 +1207,32 @@ document.body.addEventListener(<span class="string">'click'</span>, <span class=
 <p>1.文档化<br>2.自动化测试</p>
 <p>我已经用<code>grunt</code>做了文件合并依赖压缩打包的工作。</p>
 
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/javascript/">javascript</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/读书笔记/">读书笔记</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-  
-    <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
+        
+        
+          
+        
+        </div>
+    </div>
 </div>
+                
   
-  <header>
-    
+    <div class="wide">
+    <div class="center">
+        <div class="head">
+            <div class="timeLine">
+                <time datetime="2014-05-09T06:02:12.000Z" class="date">
+                    <a href="/2014/05/09/jquery-deferred/">5月 9 2014</a>
+                </time>
+            </div>
+        </div>
+        
   
-    <h1 class="title"><a href="/2014/05/09/jquery-deferred/">jquery promise 实践</a></h1>
+    <h2 class="title"><a href="/2014/05/09/jquery-deferred/">jquery promise 实践</a></h1>
   
 
-    <time datetime="2014-05-09T06:02:12.000Z">
-  <span class="day">9</span><span class="month">5月</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p>jquery中的promise实现比较繁琐，API接口太多。使用就不够方便。自己每次在使用时，都有些不太上手的感觉。<br>今天就总结一下，方便使用。</p>
+        <div class="entry">
+        
+          <p>jquery中的promise实现比较繁琐，API接口太多。使用就不够方便。自己每次在使用时，都有些不太上手的感觉。<br>今天就总结一下，方便使用。</p>
 <h2 id="一、常用方法">一、常用方法</h2>
 <p>给出常见的两种使用方法：</p>
 <p>1.<code>deferred.done(callback).failed(callback).progress(callback)</code><br>2.<code>$.when(deferredCallback).then(doneCallback,failedCallback,progressCallback)</code></p>
@@ -1396,44 +1307,25 @@ document.body.addEventListener(<span class="string">'click'</span>, <span class=
 <p>参考：</p>
 <p><a href="http://stackoverflow.com/questions/6080050/how-does-jquerys-promise-method-really-work" target="_blank">http://stackoverflow.com/questions/6080050/how-does-jquerys-promise-method-really-work</a></p>
 
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/jquery/">jquery</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/promise/">promise</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-  
-
-  <nav id="pagenavi">
-  
-  
-  <div class="clearfix"></div>
-</nav>
+        
+        
+          
+        
+        </div>
+    </div>
 </div>
-  <footer id="footer" class="inner"><div class="social alignright">
+                
   
-  
-  
-  
-  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+
+                  
 </div>
-<p>
+        </div>
+
+  <footer>
   
   &copy; 2014 xiaoming
   
-</p>
-<div class="clearfix"></div></footer>
+</footer>
   <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 
@@ -1448,12 +1340,5 @@ document.body.addEventListener(<span class="string">'click'</span>, <span class=
 })(jQuery);
 </script>
 
-
-<div id="phasebeam">
-  <canvas></canvas>
-  <canvas></canvas>
-  <canvas></canvas>
-</div>
-<script src="/js/phasebeam.js"></script>
 </body>
 </html>
