@@ -1,168 +1,146 @@
-
-  <!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>Tag: BFC | xiaoming&#39;s blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="xiaoming">
-    
-    
-    
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <title>BFC | xiaoming&#39;s blog</title>
+  <meta name="author" content="xiaoming">
+
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="xiaoming&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
 </head>
 
-    <body>
-      <header>
-        <div>
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="xiaoming&#39;s blog">xiaoming&#39;s blog</a></h1>
-				<h2 class="blog-motto"><a href="/">青春变成岁月的站台，回忆当礼物放口袋</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/categories/En">En</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-						<li><a href="/cn">关于</a></li>
-					
-					<li><form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:xiaomingming.github.io">
-					</form></li>
-				</ul>
-			</nav>
-</div>
-      </header>
-    <div id="wrap">
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner">
 
-      <div id="container">
-        
+<header id="archive-header">
+  <h1 class="alignleft">Tag: BFC</h1>
+  <div class="search alignright">
+    <form action="http://google.com/search" method="get" accept-charset="utf-8">
+      <input type="search" name="q" results="0" placeholder="Search">
+      <input type="hidden" name="q" value="site:xiaomingming.github.io">
+    </form>
+  </div>
+</header>
 
-<div class="archive-title" >
-  <h2 class="tag-icon">BFC</h2>
+
   
-</div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <section class="post" itemscope itemprop="blogPost">
-    <div id="main-col" class="alignleft">
-    <time datetime="2014-05-09T07:16:37.000Z" itemprop="datePublished">
-      <a href="/2014/05/09/css-bfc/" title="css BFC" itemprop="url"  class="article-time">5月 9 2014</a>
-    </time>
-  <h1 itemprop="name" class="arch">
+    <article class="post">
   
-    <a href="/2014/05/09/css-bfc/" title="css BFC" itemprop="url">
-        <span>
-            css BFC
-        </span>
-    </a>
-  
-</h1>
-</div>
-</section>
-
-
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
   </div>
 </div>
+  
+  <header>
+    
+  
+    <h1 class="title"><a href="/2014/05/09/css-bfc/">css BFC</a></h1>
+  
 
-      </div>
-  </div>
-      <footer><div id="footer" >
-	
-		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/RagingCat/hexo-theme-ragingcat" target="_blank" title="hexo-theme-ragingcat">Raging Cat</a> © 2014
-		
-		<a href="http://xiaomingming.github.io/about" target="_blank" title="xiaoming">xiaoming</a>
-		
-		</p>
-</div>
-</footer>
-      <script src="/js/jquery-2.0.3.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize();
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+    <time datetime="2014-05-09T07:16:37.000Z">
+  <span class="day">9</span><span class="month">5月</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <h2 id="一、BFC到底是什么？">一、BFC到底是什么？</h2>
+<p>当涉及到可视化布局的时候，Block Formatting Context提供了一个环境，HTML元素在这个环境中按照一定规则进行布局。一个环境中的元素不会影响到其它环境中的布局。比如浮动元素会形成BFC，浮动元素内部子元素的主要受该浮动元素影响，两个浮动元素之间是互不影响的。这里有点类似一个BFC就是一个独立的行政单位的意思。</p>
+<h2 id="二、css形成BFC的条件：">二、css形成BFC的条件：</h2>
+<p>英文：</p>
+<blockquote>
+<p>Floats, absolutely positioned elements, block containers (such as inline-blocks, table-cells, and table-captions) that are not block boxes, and block boxes with ‘overflow’ other than ‘visible’ (except when that value has been propagated to the viewport) establish new block formatting contexts for their contents.</p>
+</blockquote>
+<p>翻译：</p>
+<p>浮动元素，定位元素（absolute|fixed），声明为 <code>inline-block</code>，<code>table-cells</code>，<code>table-captions</code>的容器，块级声明为<code>overflow:hidden</code>的盒子都可以形成<code>BFC</code>。<br>即就是：</p>
+<ul>
+<li>overflow:hidden(前提是display为block)</li>
+<li>position:absolute|fixed</li>
+<li>display:table-cell|table-captions|inline-block</li>
+</ul>
+<h2 id="三、应用">三、应用</h2>
+<p>边距叠加，浮动清除等。</p>
+
+    
+    
+    <footer class="meta">
       
-    }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
-</script>
+  <div class="cats">
+<a href="/categories/css/">css</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/BFC/">BFC</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+  
+
+  <nav id="pagenavi">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2014 xiaoming
+  
+</p>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
 
 
 
-
-
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'null', 'ragingcat.info');  
-ga('send', 'pageview');
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript"
-   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-    </body>
-   </html>
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>
