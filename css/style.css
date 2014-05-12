@@ -746,11 +746,7 @@ article footer .addthis iframe {
   color: rgba(0,0,0,0.5);
 }
 #sidebar .widget .entry li:hover {
-  background: rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0) inset;
-  -moz-box-shadow: 0 3px 5px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0) inset;
-  -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0) inset;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0) inset;
+  background: rgba(0,0,0,0.1);
 }
 #sidebar .widget ul,
 #sidebar .widget ol,
