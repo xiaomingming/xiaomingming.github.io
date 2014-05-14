@@ -77,80 +77,15 @@
     <div class="entry">
       
         <p>总体来看，书分为三个部分来阐述：</p>
-<p>1.编程风格<br>2.编程实践<br>3.自动化</p>
-<h2 id="一、编程风格">一、编程风格</h2>
-<p>编程风格应当是所有语言都会涉及的话题了。比如：代码书写格式，语句和表达式，注释等。<br>这几个环节要进行统一约束的话，还是需要借助工具。比如好的编辑器（<code>webstorm</code>），编译语言（<code>coffeeScript</code>）。<br>所以，这里应当还是比较容易处理的。</p>
-<h2 id="二、编程实践">二、编程实践</h2>
-<p>对于<code>javascript</code>来说，好的编程实践还是可以总结出一些能引起“共鸣”的点的。现罗列如下：</p>
-<p>1.UI层的松散耦合。</p>
-<p>其实就是html，css，javascript各司其职，看似容易，其实做起来也不容易。</p>
-<p>好在，前端也出现了比较成熟的<code>MVC</code>，<code>MVVM</code>框架。比如：<code>Backbone</code>，<code>Emberjs</code>，和最近很火的<code>Angularjs</code>。</p>
-<p>2.全局变量的避免。</p>
-<p>这个处理，除了匿名函数（无法和其它模块沟通），命名空间之外，最著名的莫过于国外的基于AMD规范的<code>require</code>和国内基于Commonjs 规范的<code>seajs</code>了。</p>
-<p>3.事件处理</p>
-<p>隔离事件逻辑，不分发事件对象。</p>
-<p>“隔离事件逻辑”是为了代码复用和容易测试（我还没做过前端的js自动化测试，所以这点待验证）。<br>“不分发事件对象”，这个是指应用逻辑不应当依赖于<code>event</code>对象来正确完成功能。它应当交给事件处理函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="code"><pre><span class="keyword">var</span> myApp = {
-    handleEvent: <span class="function"><span class="keyword">function</span><span class="params">(e)</span> {</span>
-        e.preventDefault();
-        <span class="keyword">this</span>.getClient(e.clien, e.clientY);
-    },
-    getClient: <span class="function"><span class="keyword">function</span><span class="params">(x, y)</span> {</span>
-        <span class="keyword">return</span> {
-            left: x,
-            top: y
-        }
-    }
-};
-document.body.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> {</span>
-    myApp.handleEvent(e);
-});
-</pre></td></tr></table></figure>
-
-<p>4.空比较的避免<br>5.抽离配置数据<br>6.抛出自定义错误<br>7.浏览器嗅探<br>8.不是你的对象，你不要动</p>
-<p><strong>请牢记，如果你的代码没有创建这些对象，不要修改他们。包括：</strong></p>
-<ul>
-<li>原生对象（Object，Array等）</li>
-<li>DOM对象</li>
-<li>浏览器对象模型（BOM）</li>
-<li>类库的对象</li>
-</ul>
-<p><strong>原则为：</strong></p>
-<ul>
-<li>不重写方法</li>
-<li>不新增方法</li>
-<li>不删除方法</li>
-</ul>
-<p><strong>更好的途径：</strong></p>
-<ul>
-<li>基于对象的继承</li>
-<li>基于类型的继承</li>
-<li>门面模式</li>
-</ul>
-<h2 id="三、自动化">三、自动化</h2>
-<p>目前来看，我个人实践缺乏的是：</p>
-<p>1.文档化<br>2.自动化测试</p>
-<p>我已经用<code>grunt</code>做了文件合并依赖压缩打包的工作。</p>
-
+<p>1.编程风格<br>2.编程实践<br>3.自动化<br>
       
     </div>
     <footer>
       
+        
+          <div class="alignleft readmore">
+            <a href="/2014/05/09/javascript-practice-notes/#more" class="more-link">Read More</a>
+          </div>
         
         
       

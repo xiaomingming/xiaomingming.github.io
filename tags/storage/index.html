@@ -80,149 +80,15 @@
 <p>html5中存在<code>localStorage</code>对象（本地存储）和<code>sessionStorage</code>对象。</p>
 <p><code>localStorage</code>对象，既然是本地存储，自然是长久存在了。无论页面刷新，还是窗口关闭，始终存在。与cookie对象不同的是，该对象无法设置过期。</p>
 <p><code>sessionStorage</code>对象，和后端语言中的session差不多，浏览器关闭了，其值就删除了。</p>
-<h2 id="浏览器支持情况：">浏览器支持情况：</h2>
-<ul>
-<li>IE8+（包括IE8）</li>
-<li>FF3.0+</li>
-<li>chrome4.0+</li>
-<li>safari4.0+</li>
-</ul>
-<h2 id="大小限制">大小限制</h2>
-<p>5MB</p>
-<h2 id="API操作：">API操作：</h2>
-<h3 id="localStorage">localStorage</h3>
-<hr>
-<ul>
-<li>set:<code>localStorage.setItem(&#39;name&#39;,&#39;xiaoming&#39;)</code></li>
-<li>get:<code>localStorage.getItem(&#39;name&#39;)</code></li>
-<li>remove:<code>localStorage.removeItem(&#39;name&#39;)</code></li>
-</ul>
-<p>与cookie对象删除需要设置过期时间不同的是，localStorage对象只需要使用<code>removeItem</code>方法即可。</p>
-<h3 id="sessionStorage">sessionStorage</h3>
-<hr>
-<ul>
-<li>set:<code>sessionStorage.setItem(&#39;name&#39;,&#39;xiaoming&#39;)</code></li>
-<li>get:<code>sessionStorage.getItem(&#39;name&#39;)</code></li>
-</ul>
-<h3 id="注意事项：">注意事项：</h3>
-<p>同cookie获取类似，我们获取到的对象值为字符串，所以，是数字的话，请转化成数字格式</p>
-<h2 id="代码：">代码：</h2>
-<p>写了一段测试代码，功能主要是记录用户选择了哪个按钮。<a href="http://jsfiddle.net/xmlovecss/8UBgC/" target="_blank">在线demo</a></p>
-<p>代码如下：</p>
-<hr>
-<p>html:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"wrapper1"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"selected-info"</span>&gt;</span>你选中的是：<span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"a"</span>&gt;</span>a<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"b"</span>&gt;</span>b<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"wrapper2"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"selected-info"</span>&gt;</span>你选中的是：<span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"a"</span>&gt;</span>a<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"b"</span>&gt;</span>b<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>javascript：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-</pre></td><td class="code"><pre>(<span class="function"><span class="keyword">function</span><span class="params">(window,$,undefined)</span>{</span>
-    $(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-        <span class="comment">// sessionStorage</span>
-        <span class="keyword">var</span> setSelected=<span class="function"><span class="keyword">function</span><span class="params">(sOpt)</span>{</span>
-            <span class="keyword">if</span>(window.sessionStorage){
-                sessionStorage.setItem(<span class="string">'selectedName'</span>,sOpt);
-            }
-        };
-        <span class="keyword">var</span> f1=<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-            $(<span class="keyword">this</span>).addClass(<span class="string">'current'</span>).siblings().removeClass(<span class="string">'current'</span>);
-            <span class="keyword">var</span> selectS=$(<span class="keyword">this</span>).text();
-            setSelected(selectS);
-        };
-        
-        $(<span class="string">'.wrapper1 button'</span>).on(<span class="string">'click'</span>,f1);
-        setInterval(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-            <span class="keyword">var</span> selectedS=sessionStorage.getItem(<span class="string">'selectedName'</span>)||<span class="string">''</span>;
-            $(<span class="string">'.wrapper1 .selected-info span'</span>).text(selectedS);
-            !!selectedS&&$(<span class="string">'.wrapper1 button:contains("'</span>+selectedS+<span class="string">'")'</span>).addClass(<span class="string">'current'</span>);
-        },<span class="number">300</span>);
-    });
-    <span class="comment">// localStorage 测试</span>
-    $(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-        <span class="keyword">var</span> setSelected=<span class="function"><span class="keyword">function</span><span class="params">(sOpt)</span>{</span>
-            <span class="keyword">if</span>(window.localStorage){
-                localStorage.selectedName=sOpt;
-            }
-        };
-        <span class="keyword">var</span> f1=<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-            $(<span class="keyword">this</span>).addClass(<span class="string">'current'</span>).siblings().removeClass(<span class="string">'current'</span>);
-            <span class="keyword">var</span> selectS=$(<span class="keyword">this</span>).text();
-            setSelected(selectS);
-        };
-        $(<span class="string">'.wrapper2 button'</span>).on(<span class="string">'click'</span>,f1);
-        setInterval(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-            <span class="keyword">var</span> selectedS= localStorage.selectedName ||<span class="string">''</span>;
-            $(<span class="string">'.wrapper2 .selected-info span'</span>).text(selectedS);
-            !!selectedS&&$(<span class="string">'.wrapper2 button:contains("'</span>+selectedS+<span class="string">'")'</span>).addClass(<span class="string">'current'</span>);
-        },<span class="number">300</span>);
-    });
-})(window,jQuery);
-</pre></td></tr></table></figure>
-
-
+<p>
       
     </div>
     <footer>
       
+        
+          <div class="alignleft readmore">
+            <a href="/2014/05/09/html5-storage/#more" class="more-link">Read More</a>
+          </div>
         
         
       

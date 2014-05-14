@@ -11,7 +11,7 @@
 1
 2
 .clearfix, .my, div { *zoom: 1; }
-.clearfix :after, .my :after, div :after { display: block; height: 0; c">
+.clearfix :after, .my :after, div :after { display: block; height: 0; clear: both; font-size: 0; visibility: hidden; content: &#39;.&#39;; }">
   
   
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
@@ -86,7 +86,7 @@
 <span class="class">.clearfix</span> <span class="pseudo">:after</span>, <span class="class">.my</span> <span class="pseudo">:after</span>, <span class="tag">div</span> <span class="pseudo">:after</span> <span class="rules">{ <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>; <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>; <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule"><span class="attribute">visibility</span>:<span class="value"> hidden</span></span>; <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">'.'</span></span></span>; <span class="rule">}</span></span>
 </pre></td></tr></table></figure>
 
-<p>2.<code>@mixin</code> 创造的规则，不会被编译到文件中，除非它被调用了。但是，调用的规则不会合并。</p>
+<p><a id="more"></a><br>2.<code>@mixin</code> 创造的规则，不会被编译到文件中，除非它被调用了。但是，调用的规则不会合并。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre>1
 2
 3

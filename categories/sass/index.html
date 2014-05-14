@@ -84,119 +84,15 @@
 <span class="class">.clearfix</span> <span class="pseudo">:after</span>, <span class="class">.my</span> <span class="pseudo">:after</span>, <span class="tag">div</span> <span class="pseudo">:after</span> <span class="rules">{ <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>; <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>; <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule"><span class="attribute">visibility</span>:<span class="value"> hidden</span></span>; <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">'.'</span></span></span>; <span class="rule">}</span></span>
 </pre></td></tr></table></figure>
 
-<p>2.<code>@mixin</code> 创造的规则，不会被编译到文件中，除非它被调用了。但是，调用的规则不会合并。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="at_rule">@<span class="keyword">mixin</span> links </span>{
-    <span class="tag">a</span> <span class="rules">{
-        <span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>;
-        <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;
-    <span class="rule">}</span></span>
-}
-</pre></td></tr></table></figure>
-
-<p>编译后：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="class">.mod</span> <span class="tag">a</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>; <span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>; <span class="rule">}</span></span>
-<span class="class">.mod</span> <span class="pseudo">:after</span> <span class="rules">{ <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>; <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>; <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule"><span class="attribute">visibility</span>:<span class="value"> hidden</span></span>; <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">'.'</span></span></span>; <span class="rule">}</span></span>
-<span class="class">.mod</span> <span class="rules">{ <span class="rule">*<span class="attribute">zoom</span>:<span class="value"> <span class="number">1</span></span></span>; <span class="rule">}</span></span>
-<span class="class">.mod</span> <span class="tag">div</span> <span class="tag">a</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>; <span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>; <span class="rule">}</span></span>
-</pre></td></tr></table></figure>
-
-<p>3.<code>%占位符</code>创造的规则，不会被编译到文件中，除非它被调用了。但是，该规则不能传参数，可以做规则合并。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-</pre></td><td class="code"><pre>%mode {
-    font-size:12px;
-    color:#fff;
-    background:#333;
-    border-radius:3px;
-    line-height:20px;
-    height:20px;
-}
-.test1 {
-    @extend %mode;
-}
-.test2 {
-    @extend %mode;
-}
-.my {
-    @extend .clearfix;
-    .tit {
-        @extend %mode;
-    }
-}
-</pre></td></tr></table></figure>
-
-<p>编译后：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="class">.test1</span>, <span class="class">.test2</span>, <span class="class">.my</span> <span class="class">.tit</span> <span class="rules">{ <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">12</span>px</span></span>; <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#fff</span></span></span>; <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#333</span></span></span>; <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">3</span>px</span></span>; <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20</span>px</span></span>; <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">20</span>px</span></span>; <span class="rule">}</span></span>
-</pre></td></tr></table></figure>
-
-<h2 id="二、其它注意事项">二、其它注意事项</h2>
-<p>选择器占位符的限制<br>使用@extend调用定义好的选择器占位符%placeholder有所限制，他不能在不同的@media中运行。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-</pre></td><td class="code"><pre>%icon {
-  transition: background-color ease .2s;
-  margin: 0 .5em;
-}
-
-@media screen {
-  .error-icon {
-    @extend %icon;
-  }
-
-  .info-icon {
-    @extend %icon;
-  }
-}
-</pre></td></tr></table></figure>
-
-<p>此时编译你的SCSS文件时，编译器将会报错。</p>
-<p>参考：<a href="http://www.w3cplus.com/preprocessor/understanding-placeholder-selectors.html" target="_blank">http://www.w3cplus.com/preprocessor/understanding-placeholder-selectors.html</a></p>
-
+<p>
       
     </div>
     <footer>
       
+        
+          <div class="alignleft readmore">
+            <a href="/2014/05/09/sass-extend-placeholder/#more" class="more-link">Read More</a>
+          </div>
         
         
       
