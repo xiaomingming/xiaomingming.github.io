@@ -462,6 +462,8 @@ db(<span class="string">'x'</span>); <span class="comment">// 返回 1</span>
         var scrollTop=$(this).scrollTop();
         if(scrollTop>0){
             gotoEle.fadeIn();
+        }else {
+            gotoEle.fadeOut();
         }
     });
     gotoEle.on('click',function(e){

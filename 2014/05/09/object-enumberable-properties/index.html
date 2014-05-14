@@ -243,6 +243,8 @@ var duoshuoQuery = {short_name:"front"};
         var scrollTop=$(this).scrollTop();
         if(scrollTop>0){
             gotoEle.fadeIn();
+        }else {
+            gotoEle.fadeOut();
         }
     });
     gotoEle.on('click',function(e){
