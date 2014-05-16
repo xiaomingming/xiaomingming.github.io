@@ -82,9 +82,6 @@
 <p>触发方法    触发回调<br>def.notify()/def.notifyWith()   def.progress()<br>def.reject()    def.fail()<br>def.resolve()   def.done()</p>
 <p>由于jquery 中ajax本身就是deferred对象，因此调用时，就没必要实例化了(var def=$.Deferred())。</p>
 <p>对于绑定了动画的dom，链式绑定<code>promise()</code>方法，当动画处理完成，就可以调用事件处理方法了。</p>
-<blockquote>
-<p>You call promise on a jQuery selection, and you’ll get an object that you can bind event handlers to, when all the animations in the object have completed.</p>
-</blockquote>
 <p>代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
 2
@@ -204,15 +201,15 @@ var duoshuoQuery = {short_name:"front"};
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/css/">css</a><small>2</small></li>
-  
-    <li><a href="/categories/html5/">html5</a><small>1</small></li>
-  
-    <li><a href="/categories/javascript/">javascript</a><small>3</small></li>
-  
     <li><a href="/categories/jquery/">jquery</a><small>1</small></li>
   
     <li><a href="/categories/sass/">sass</a><small>1</small></li>
+  
+    <li><a href="/categories/javascript/">javascript</a><small>3</small></li>
+  
+    <li><a href="/categories/html5/">html5</a><small>1</small></li>
+  
+    <li><a href="/categories/css/">css</a><small>2</small></li>
   
   </ul>
 </div>
@@ -223,19 +220,19 @@ var duoshuoQuery = {short_name:"front"};
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <a href="/tags/BFC/"><li>BFC<small>1</small></li></a>
+    <a href="/tags/promise/"><li>promise<small>1</small></li></a>
   
-    <a href="/tags/storage/"><li>storage<small>1</small></li></a>
-  
-    <a href="/tags/闭包/"><li>闭包<small>1</small></li></a>
+    <a href="/tags/sass/"><li>sass<small>2</small></li></a>
   
     <a href="/tags/读书笔记/"><li>读书笔记<small>1</small></li></a>
   
-    <a href="/tags/promise/"><li>promise<small>1</small></li></a>
+    <a href="/tags/storage/"><li>storage<small>1</small></li></a>
   
     <a href="/tags/javascript/"><li>javascript<small>1</small></li></a>
   
-    <a href="/tags/sass/"><li>sass<small>2</small></li></a>
+    <a href="/tags/BFC/"><li>BFC<small>1</small></li></a>
+  
+    <a href="/tags/闭包/"><li>闭包<small>1</small></li></a>
   
   </ul>
 </div>
