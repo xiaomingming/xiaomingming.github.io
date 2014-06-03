@@ -83,7 +83,7 @@
 <h2 id="prototype属性">prototype属性</h2>
 <p>只要创建了一个函数，就会为该函数创建一个<code>prototype</code>属性，指向该函数的原型对象。实例对象是不会拥有该属性的。<br>默认情况下，该<code>原型对象</code>也会获得一个<code>constructor</code>属性，该属性包含一个指针，指向<code>prototype</code>属性所在的函数。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>Person.prototype.constructor=Person
+</pre></td><td class="code"><pre>Person.prototype.constructor===Person
 </pre></td></tr></table></figure>
 
 <h2 id="[[prototype]]和proto">[[prototype]]和<strong>proto</strong></h2>
@@ -409,13 +409,13 @@ Person.prototype={};
   
     <li><a href="/tags/读书笔记/">读书笔记<small>1</small></a></li>
   
-    <li><a href="/tags/prototype/">prototype<small>1</small></a></li>
-  
     <li><a href="/tags/promise/">promise<small>2</small></a></li>
   
     <li><a href="/tags/javascript/">javascript<small>1</small></a></li>
   
     <li><a href="/tags/sass/">sass<small>2</small></a></li>
+  
+    <li><a href="/tags/prototype/">prototype<small>1</small></a></li>
   
   </ul>
 </div>
