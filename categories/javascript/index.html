@@ -82,82 +82,17 @@
 <ul>
 <li>prototype属性</li>
 <li>[[prototype]]</li>
-<li><strong>proto</strong></li>
+<li><code>__proto__</code></li>
 </ul>
-<h2 id="prototype属性">prototype属性</h2>
-<p>只要创建了一个函数，就会为该函数创建一个<code>prototype</code>属性，指向该函数的原型对象。实例对象是不会拥有该属性的。<br>默认情况下，该<code>原型对象</code>也会获得一个<code>constructor</code>属性，该属性包含一个指针，指向<code>prototype</code>属性所在的函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>Person.prototype.constructor===Person
-</pre></td></tr></table></figure>
-
-<h2 id="[[prototype]]和proto">[[prototype]]和<strong>proto</strong></h2>
-<p>javascript中，不可以访问的内部属性都是用<code>[[propertyName]]</code>这种形式来表示的，比如还有枚举属性[[Enumberable]]。</p>
-<p><code>[[prototype]]</code>属性只能是<strong>对象</strong>可以拥有的属性。比如实例化的对象以及<code>原型对象</code>。这个属性指向拥有其属性的对象的构造函数的原型对象。注意，此处的<code>构造函数</code>指的是使用<code>new</code>方式的构造函数。并不因为更改了原型对象上的<code>constructor</code>属性而改变。</p>
-<p><code>__proto__</code>是个啥呢，就是对<code>[[propertyName]]</code>的实现。也就是说，你可以在支持该实现的浏览器下，去访问对象的构造函数的原型对象。比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="code"><pre>
-<span class="keyword">var</span> Person=<span class="function"><span class="keyword">function</span><span class="params">(name)</span>{</span>
-    <span class="keyword">this</span>.name=name;
-};
-
-<span class="keyword">var</span> p1=<span class="keyword">new</span> Person();
-p1.__proto__===Person.prototype;<span class="comment">//true</span>
-
-Person.prototype={};
-
-<span class="keyword">var</span> p2=<span class="keyword">new</span> Person();
-
-p2.__proto__===<span class="built_in">Object</span>.prototype;<span class="comment">//false</span>
-</pre></td></tr></table></figure>
-
-<p>当然，<code>__proto__</code>只是浏览器的私有实现，目前的标准实现方法是<code>Object.getPrototypeOf(object)</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="code"><pre>
-<span class="keyword">var</span> Person=<span class="function"><span class="keyword">function</span><span class="params">(name)</span>{</span>
-    <span class="keyword">this</span>.name=name;
-};
-
-<span class="keyword">var</span> p1=<span class="keyword">new</span> Person();
-<span class="built_in">Object</span>.getPrototypeOf(p1)===Person.prototype;<span class="comment">//true</span>
-
-Person.prototype={};
-
-<span class="keyword">var</span> p2=<span class="keyword">new</span> Person();
-
-<span class="built_in">Object</span>.getPrototypeOf(p2)===<span class="built_in">Object</span>.prototype;<span class="comment">//false</span>
-</pre></td></tr></table></figure>
-
-<p>由于<code>原型对象</code>也是一个对象，所以，它自然而然也拥有<code>[[prototype]]</code>属性。</p>
-<p>弄清楚了这些概念，原型链，继承等存在的一些问题，都不是问题了。</p>
-
+<p>
       
     </div>
     <footer>
       
+        
+          <div class="alignleft readmore">
+            <a href="/2014/06/03/javascript-prototype/#more" class="more-link">Read More</a>
+          </div>
         
         
       
